@@ -1,0 +1,13 @@
+[package]
+name = "practice"
+version = "0.1.0"
+edition = "2021"
+include = [
+  "src/**/*"
+]
+
+[dependencies]
+
+[[bin]]
+name = "practice"
+path = "src/main.rs"
