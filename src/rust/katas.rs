@@ -1,4 +1,3 @@
-// src/rust/katas.rs
 
 pub mod katas {
     pub fn number_0(bus_stops: &[(i32, i32)]) -> i32 {
