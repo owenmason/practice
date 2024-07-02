@@ -1,4 +1,3 @@
-// rust/src/main.rs
 
 use practice::rust::playground::*;
 use practice::rust::katas::*;
