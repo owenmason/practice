@@ -15,6 +15,12 @@ fn main() {
     let bus_stops = [(10, 0), (3, 5), (5, 8)];
     katas::number_0(&bus_stops);
     call_this_bad_boy();
+    playground::closure_val();
+    playground::closure_ref();
+    playground::closure_mut_ref();
+    playground::size_demo();
 
+    katas::digital_root_loop(132189);
 
+    println!("donezo.");
 }
