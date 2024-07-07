@@ -7,6 +7,10 @@ include = [
 ]
 
 [dependencies]
+rand="0.8.5"
+device_query="2.1.0"
+regex="1.10.5"
+snailquote="0.3.0"
 
 [[bin]]
 name = "practice"

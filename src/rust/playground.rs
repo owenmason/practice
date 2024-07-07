@@ -1,4 +1,8 @@
 use std::thread;
+use rand::seq::SliceRandom;
+use rand::seq::index::sample;
+use std::io;
+use regex::Regex;
 
 pub mod playground {
     pub fn testeroni_pizzi() {
@@ -7,9 +11,6 @@ pub mod playground {
         println!("{}", strval);
         //let djinn = !vec[1,2,3,4,5,6,7,8,9,10];
 
-        // let closure = |x| x;
-        // let s = closure(String::from("tadpoles"));
-        // let n = closure(33);
         // let t1 = thread::spawn();
     }
 
@@ -50,6 +51,59 @@ pub mod playground {
         dbg!("{}", std::mem::size_of::<Foo1>());
         enum Foo2 { A(u8), B(u8) }
         dbg!("{}", std::mem::size_of::<Foo2>());
+    }
+
+    pub fn is_fibonacci_subset(n: i32) -> bool {
+        match n {
+            1 | 2 | 3 | 5 | 8 => return true,
+            _ => return false,
+        }
+    }
+
+    struct fibonacci_subset {
+        vals: i32,
+    }
+
+    pub fn get_user_input(s: &str) -> String {
+        println!("{}-> ", s);
+        let mut buffer = String::new();
+        //let stdin = io::stdin().read_line(&mut buffer)?;
+        return buffer;
+    }
+
+    pub fn play_with_match() -> String {
+        let n: i32 = 6;
+        let funky: Vec<char> = "😀😇😎🤪🕷️🧙🎲🐍".chars().collect(); //'\u{1f577}''\u{1f600}''\u{1f607}''\u{1f60e}''\u{1f92a}''\u{1f577}''\u{fe0f}''\u{1f9d9}''\u{1f3b2}''\u{1f40d}'        
+
+        let rand_indexes = rand::seq::index::sample(&mut rand::thread_rng(), funky.len(), 1);
+        let mut funky_rand: Vec<char> = Vec::new();
+        for index in rand_indexes {
+            funky_rand.push(funky.get(index).copied().unwrap());
+        }
+        match n {
+            i32::MIN..=-1 => return String::from(format!("{} is pretty low", n)),
+            0 => return String::from(format!("unsurprisingly, the number of bits in i32 is {}", i32::BITS)),
+            1 | 2 | 3 | 5 | 8 => return String::from("it's a fibonacci subset!"),
+            8..=i32::MAX => return String::from(format!("probably pretty high {}", n)),
+            _ => {
+                // let unicode_value = u32::from_str_radix(&funky_rand[0].to_string(), 16).unwrap();
+                // let character = std::char::from_u32(unicode_value).unwrap();
+                //return String::from(format!("I bet you missed something hehe JACKPOT!! {}", funky_rand[0]));
+                //println!("{}", snailquote::unescape(&funky_rand[0].to_string()).unwrap());
+                return String::from(format!("I bet you missed something hehe JACKPOT!! {}", funky_rand[0])); //Windows console does NOT support UTF-8!!!
+            },
+        }
+    }
+
+
+    // Unicode is a character set. UTF-8, UTF-16, and UTF-32 are different encodings for the same character set.
+
+    //todo
+    pub fn output_rand_unicode() {
+        loop {
+            println!("{}", rand::random::<char>());
+            //if ()
+        }
     }
     
 
